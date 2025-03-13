@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website của BÍCH PHƯƠNG</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Changed to a light blue for a fresh look */
+        }
+        h3 {
+            text-align: center;
+            color: #ff1493; /* Changed to a brighter pink */
+            font-family: 'Georgia', serif;
+            margin-top: 20px;
+            font-size: 2em; /* Decreased font size for better visibility */
+        }
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Set to 2 columns for 2 videos in a row */
+            gap: 10px; /* Further reduced gap between video frames */
+            padding: 10px; /* Further reduced padding for a smaller gallery */
+            justify-items: center; /* Center items in the grid */
+        }
+        .video-frame {
+            border: 2px solid #ff69b4;
+            border-radius: 8px; /* Further decreased border radius for a sharper look */
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Further reduced shadow for a flatter appearance */
+            transition: transform 0.3s; /* Added transition for hover effect */
+        }
+        .video-frame:hover {
+            transform: scale(1.02); /* Slightly reduce the enlargement on hover */
+        }
+        .video-frame video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+    <script>
+        function toggleVideos(currentVideo) {
+            const video1 = document.getElementById('video1');
+            const video2 = document.getElementById('video2');
+
+            if (currentVideo === 'video2' && !video1.paused) {
+                video1.pause();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Nơi lưu trữ những kĩ niệm</h3>
+    <div class="video-gallery">
+        <div class="video-frame">
+            <video id="video1" controls onplay="toggleVideos('video1')">
+                <source src="videos/video1.mp4" type="video/mp4">
+                Ngày 1: 
+            </video>
+        </div>
+        <div class="video-frame">
+            <video id="video2" controls onplay="toggleVideos('video2')">
+                <source src="videos/video2.mp4" type="video/mp4">
+                Ngày 2: 
+            </video>
+        </div>
+        <div class="video-frame">
+            <video id="video3" controls onplay="toggleVideos('video3')"> <!-- Changed id to video3 -->
+                <source src="videos/video3.mp4" type="video/mp4">
+                Ngày 3: 
+            </video>
+        </div>
+        <div class="video-frame">
+            <video id="video4" controls onplay="toggleVideos('video4')"> <!-- Changed id to video4 -->
+                <source src="videos/video4.mp4" type="video/mp4">
+                Ngày 4: 
+            </video>
+        </div>
+    </div>
+</body>
+</html>
